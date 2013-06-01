@@ -1,6 +1,6 @@
 require "rubykassa/engine"
 require 'rubykassa/client'
-require 'rubykassa/interface'
+require 'rubykassa/payment_interface'
 
 module Rubykassa
   extend self
@@ -16,7 +16,7 @@ module Rubykassa
   end
 
   def pay_url invoice_id, total, params
-    Rubykassa::Interface.new do
+    Rubykassa::PaymentInterface.new do
       self.total      = total
       self.invoice_id = invoice_id
       self.params     = params

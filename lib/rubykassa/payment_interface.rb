@@ -1,6 +1,5 @@
 module Rubykassa  
-  class Interface
-    VALID_PARAMS = %w(MrchLogin OutSum InvId SignatureValue)
+  class PaymentInterface
     PARAMS_CONFORMITY = {
       login:      "MrchLogin",
       total:      "OutSum",
