@@ -1,0 +1,2 @@
+module RobokassaHelper
+end

@@ -20,8 +20,8 @@ Gem::Specification.new do |s|
   # s.add_dependency "jquery-rails"
 
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency 'rspec', '~> 2.7.0'
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'webmock'
-  s.add_development_dependency 'rack-test'
+  s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "growl"
+  s.add_development_dependency "guard"
+  s.add_development_dependency "guard-rspec"
 end

@@ -1,0 +1,312 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-01 18:10:27 +0600
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (12.3ms)
+Compiled welcome.css  (0ms)  (pid 3460)
+Compiled application.css  (7ms)  (pid 3460)
+Compiled jquery.js  (62ms)  (pid 3460)
+Compiled jquery_ujs.js  (1ms)  (pid 3460)
+Compiled welcome.js  (0ms)  (pid 3460)
+Compiled application.js  (136ms)  (pid 3460)
+Completed 200 OK in 232ms (Views: 230.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-06-01 18:10:28 +0600
+Served asset /welcome.css - 200 OK (14ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-06-01 18:10:28 +0600
+Served asset /welcome.js - 200 OK (6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-01 18:10:28 +0600
+Served asset /application.css - 200 OK (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-01 18:10:28 +0600
+Served asset /application.js - 200 OK (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-01 18:10:28 +0600
+Served asset /jquery.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-01 18:10:28 +0600
+Served asset /jquery_ujs.js - 200 OK (7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-01 18:11:58 +0600
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (19.3ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (undefined method `login' for Rubykassa:Module):
+    1: <h1>Rubykassa Dummy App</h1>
+    2: 
+    3: <h2>Rubykassa configured with:</h2>
+    4: <p>Login: <%= Rubykassa.login %></p>
+  app/views/welcome/index.html.erb:4:in `_app_views_welcome_index_html_erb___104149281_85202540'
+
+
+  Rendered /home/sergey/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /home/sergey/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/sergey/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-01 18:13:23 +0600
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `login' for Rubykassa:Module):
+    1: <h1>Rubykassa Dummy App</h1>
+    2: 
+    3: <h2>Rubykassa configured with:</h2>
+    4: <p>Login: <%= Rubykassa.login %></p>
+  app/views/welcome/index.html.erb:4:in `_app_views_welcome_index_html_erb___104149281_85202540'
+
+
+  Rendered /home/sergey/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /home/sergey/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/sergey/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-01 18:14:30 +0600
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `login' for Rubykassa:Module):
+    1: <h1>Rubykassa Dummy App</h1>
+    2: 
+    3: <h2>Rubykassa configured with:</h2>
+    4: <p>Login: <%= Rubykassa.login %></p>
+  app/views/welcome/index.html.erb:4:in `_app_views_welcome_index_html_erb___104149281_85202540'
+
+
+  Rendered /home/sergey/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /home/sergey/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/sergey/.rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.3ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-01 18:14:49 +0600
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 96ms (Views: 94.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-01 18:14:49 +0600
+Served asset /jquery.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-06-01 18:14:49 +0600
+Served asset /welcome.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-01 18:14:49 +0600
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-01 18:14:49 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-06-01 18:14:49 +0600
+Served asset /welcome.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-01 18:14:49 +0600
+Served asset /application.js - 304 Not Modified (11ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-01 18:16:21 +0600
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-01 18:16:21 +0600
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-01 18:16:21 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-06-01 18:16:21 +0600
+Served asset /welcome.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-01 18:16:21 +0600
+Served asset /jquery.js - 304 Not Modified (65ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-06-01 18:16:21 +0600
+Served asset /welcome.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-01 18:16:21 +0600
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-01 18:16:56 +0600
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-01 18:16:56 +0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-06-01 18:16:56 +0600
+Served asset /welcome.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-01 18:16:56 +0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-06-01 18:16:56 +0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-01 18:16:56 +0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-01 18:16:56 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-01 18:32:36 +0600
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 93ms (Views: 92.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-06-01 18:32:36 +0600
+Served asset /welcome.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-01 18:32:36 +0600
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-01 18:32:36 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-01 18:32:36 +0600
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-01 18:32:36 +0600
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-06-01 18:32:36 +0600
+Served asset /welcome.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-01 18:35:30 +0600
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-01 18:35:30 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-06-01 18:35:30 +0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-01 18:35:30 +0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-01 18:35:30 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-06-01 18:35:30 +0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-01 18:35:30 +0600
+Served asset /application.js - 304 Not Modified (2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-01 18:52:19 +0600
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 98ms (Views: 96.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-01 18:52:19 +0600
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-01 18:52:19 +0600
+Served asset /jquery.js - 200 OK (5ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-06-01 18:52:19 +0600
+Served asset /welcome.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-01 18:52:19 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-06-01 18:52:19 +0600
+Served asset /welcome.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-01 18:52:19 +0600
+Served asset /application.js - 304 Not Modified (17ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-01 19:06:34 +0600
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 87ms (Views: 86.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-01 19:06:35 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2013-06-01 19:06:35 +0600
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-01 19:06:35 +0600
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-01 19:06:35 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-06-01 19:06:35 +0600
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-01 19:06:35 +0600
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
