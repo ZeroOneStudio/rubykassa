@@ -15,3 +15,11 @@ gem "jquery-rails"
 
 # To use debugger
 # gem 'debugger'
+
+group :development, :test do
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-bundler'
+  gem 'libnotify'
+  gem 'growl'
+end
