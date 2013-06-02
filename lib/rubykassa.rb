@@ -1,6 +1,7 @@
 require "rubykassa/engine"
 require 'rubykassa/client'
 require 'rubykassa/payment_interface'
+require 'rubykassa/notification'
 
 module Rubykassa
   extend self

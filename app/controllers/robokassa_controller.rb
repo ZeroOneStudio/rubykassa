@@ -1,6 +1,8 @@
 class RobokassaController < ApplicationController
+  before_filter :create_notification, except: :fail
+
   def paid
-    render text: "paid"
+    render text: @notification.generate_signature_for(:response)
   end
 
   def success
@@ -9,5 +11,13 @@ class RobokassaController < ApplicationController
 
   def fail
     render text: "fail"
+  end
+
+private
+
+  def create_notification
+    logger.info params
+    @notification = Rubykassa::Notification.new params
+    logger.info @notification.params
   end
 end
