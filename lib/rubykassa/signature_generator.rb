@@ -12,7 +12,7 @@ module Rubykassa
       elsif kind == :response
         password = Rubykassa.second_password
         string = [@total, @invoice_id, password].join(":") + custom_params_string
-      elsif kind = :success
+      elsif kind == :success
         password = Rubykassa.first_password
         string = [@total, @invoice_id, password].join(":") + custom_params_string
       end

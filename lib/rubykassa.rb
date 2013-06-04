@@ -10,7 +10,7 @@ module Rubykassa
     Rubykassa::Client.configure &block
   end
 
-  %w(login first_password second_password mode).map do |name|
+  %w(login first_password second_password mode http_method).map do |name|
     define_method name do
       Rubykassa::Client.configuration.send(name)
     end
