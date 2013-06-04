@@ -1,6 +1,6 @@
 Rubykassa.configure do |c|
-  c.login = "demo"
-  c.first_password = "the rent"
-  c.second_password = "is too damn high"
+  c.login = ENV["ROBOKASSA_LOGIN"]
+  c.first_password = ENV["ROBOKASSA_FIRST_PASSWORD"]
+  c.second_password = ENV["ROBOKASSA_SECOND_PASSWORD"]
   c.mode = :test
 end

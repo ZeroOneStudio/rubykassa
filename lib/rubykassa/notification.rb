@@ -8,17 +8,11 @@ module Rubykassa
 
     def initialize params
       @params = params
+      @invoice_id = params["InvId"]
+      @total = params["OutSum"]
     end
 
-    def invoice_id
-      @invoice_id = @params["InvId"]
-    end
-
-    def total
-      @total = @params["OutSum"]
-    end
-
-    %w(payment response).map do |kind|
+    %w(payment response success).map do |kind|
       define_method "valid_#{kind}_signature?" do
         @params["SignatureValue"] == generate_signature_for(kind.to_sym)
       end
