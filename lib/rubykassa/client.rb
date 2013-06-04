@@ -10,6 +10,7 @@ module Rubykassa
       def configure
         self.configuration = Rubykassa::Configuration.new
         yield self.configuration
+
         raise ConfigurationError, "Alailable modes are :test or :production" unless [:test, :production].include? self.configuration.mode
         raise ConfigurationError, "Alailable http methods are :get or :post" unless [:get, :post].include? self.configuration.http_method
       end
