@@ -4,9 +4,7 @@
 <div>Login: <%= Rubykassa.login %></div>
 <div>First password: <%= Rubykassa.first_password %></div>
 <div>Second_password: <%= Rubykassa.second_password %></div>
-
-<%= link_to "Paid", robokassa_paid_path %>
-<%= link_to "Success", robokassa_success_path %>
-<%= link_to "Fail", robokassa_fail_path %>
+<div>Mode: <%= Rubykassa.mode %></div>
+<div>HTTP Method: <%= Rubykassa.http_method %></div>
 
 <%= link_to_pay "Оплатить", 12, 1200 %>
