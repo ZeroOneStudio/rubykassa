@@ -12,9 +12,9 @@ module Rubykassa
       @total = params["OutSum"]
     end
 
-    %w(payment response success).map do |kind|
+    %w(result success).map do |kind|
       define_method "valid_#{kind}_signature?" do
-        @params["SignatureValue"].downcase! == generate_signature_for(kind.to_sym)
+        @params["SignatureValue"] == generate_signature_for(kind.to_sym)
       end
     end
 
