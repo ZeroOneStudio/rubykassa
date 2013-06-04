@@ -20,4 +20,11 @@ describe Rubykassa::Notification do
     notification = Rubykassa::Notification.new(Hash["InvId", "12"])
     notification.success.should == "OK12"
   end
+
+  it "should raise error when wrong kind argument is passed to signature generator" do
+    expect {     
+      notification = Rubykassa::Notification.new({})
+      notification.generate_signature_for(:bullshit)
+    }.to raise_error(ArgumentError, "Available kinds are only :payment, :result or :success")
+  end
 end
