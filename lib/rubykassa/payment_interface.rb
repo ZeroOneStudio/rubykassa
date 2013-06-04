@@ -37,7 +37,7 @@ module Rubykassa
         total: @total,
         invoice_id: @invoice_id,
         signature: generate_signature_for(:payment)
-      }.merge(Hash[@params.sort.map {|param_name| ["shp#{param_name[0]}", param_name[1]]}])
+      }.merge(Hash[@params.sort.map {|param_name| ["shp#{param_name[0]}".to_sym, param_name[1]]}])
     end
   end
 end

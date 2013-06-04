@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Rubykassa do
+describe Rubykassa::Client do
   before(:each) do
     Rubykassa.configure do |config|
       config.login = "name"
