@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope '/robokassa' do
-    get '/paid'    => 'robokassa#paid',    as: :robokassa_paid
-    get '/success' => 'robokassa#success', as: :robokassa_success
-    get '/fail'    => 'robokassa#fail',    as: :robokassa_fail
+    %w(paid success fail).map do |route|
+      method(Rubykassa.http_method).call "/#{route}" => "robokassa##{route}", as: "robokassa_#{route}".to_sym 
+    end
   end
 end
