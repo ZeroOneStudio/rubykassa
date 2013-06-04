@@ -13,7 +13,6 @@ module Rubykassa
 
     attr_accessor :invoice_id, :total, :params
 
-    # Add later 'Desc', 'Email', 'IncCurrLabel', 'Culture'
     def initialize &block
       instance_eval &block if block_given?
     end
