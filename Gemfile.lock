@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     rubykassa (0.0.1)
+      multi_xml
       rails (~> 3.2.13)
 
 GEM
@@ -68,6 +69,7 @@ GEM
     method_source (0.8.1)
     mime-types (1.23)
     multi_json (1.7.4)
+    multi_xml (0.5.3)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)

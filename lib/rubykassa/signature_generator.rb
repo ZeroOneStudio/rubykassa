@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Rubykassa
   module SignatureGenerator
     def generate_signature_for kind

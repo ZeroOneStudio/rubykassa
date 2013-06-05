@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'rubykassa/action_view_extension'
 
 module Rubykassa

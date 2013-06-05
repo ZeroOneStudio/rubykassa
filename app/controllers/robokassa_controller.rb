@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class RobokassaController < ApplicationController
   before_filter :create_notification, except: :fail
 

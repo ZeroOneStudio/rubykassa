@@ -7,4 +7,18 @@
 <div>Mode: <%= Rubykassa.mode %></div>
 <div>HTTP Method: <%= Rubykassa.http_method %></div>
 
-<%= link_to_pay "Оплатить", 12, 1200 %>
+<h2>XML Interface</h2>
+<% xi = Rubykassa::XmlInterface.new do %>
+  <% self.invoice_id = 12 %>
+  <% self.total = 1200 %>
+  <% self.language = :ru %>
+<% end %>
+
+<p>GET CURRENCIES <%= xi.get_currencies.class %></p>
+<p>GET PAYMENT METHODS <%= xi.get_payment_methods %></p>
+<p>GET RATES <%= xi.get_rates %></p>
+<p>OP STATE <%= xi.op_state %></p>
+
+<div>
+  <%= link_to_pay "Pay", 12, 1200 %>
+</div>

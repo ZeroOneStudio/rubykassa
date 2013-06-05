@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'rubykassa/signature_generator'
 
 module Rubykassa

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Rubykassa
   module ActionViewExtension
     def link_to_pay phrase, invoice_id, total
