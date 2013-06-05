@@ -11,7 +11,7 @@
 <% xi = Rubykassa::XmlInterface.new do %>
   <% self.invoice_id = 12 %>
   <% self.total = 1200 %>
-  <% self.language = :fr %>
+  <% self.language = :ru %>
 <% end %>
 
 <p>GET CURRENCIES <%= xi.get_currencies %></p>
@@ -20,5 +20,5 @@
 <p>OP STATE <%= xi.op_state %></p>
 
 <div>
-  <%= link_to_pay "Pay", 12, 1200 %>
+  <%= link_to_pay "Pay", 12, 1200, {email: "me@me.me", description: "Anything not more that 100 symbols", culture: :ru } %>
 </div>

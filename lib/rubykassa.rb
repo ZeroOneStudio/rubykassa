@@ -18,11 +18,11 @@ module Rubykassa
     end
   end
 
-  def pay_url invoice_id, total, params
+  def pay_url invoice_id, total, params, options = {}
     Rubykassa::PaymentInterface.new do
       self.total      = total
       self.invoice_id = invoice_id
       self.params     = params
-    end.pay_url
+    end.pay_url(options)
   end
 end

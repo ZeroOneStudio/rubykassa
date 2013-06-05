@@ -6,10 +6,14 @@ module Rubykassa
     include SignatureGenerator
 
     PARAMS_CONFORMITY = {
-      login:      "MrchLogin",
-      total:      "OutSum",
-      invoice_id: "InvId",
-      signature:  "SignatureValue"
+      login:       "MrchLogin",
+      total:       "OutSum",
+      invoice_id:  "InvId",
+      signature:   "SignatureValue",
+      email:       "Email",
+      currency:    "IncCurrLabel",
+      description: "InvDesc",
+      culture:     "Culture"
     }
 
     attr_accessor :invoice_id, :total, :params
@@ -26,8 +30,10 @@ module Rubykassa
       test_mode? ? "http://test.robokassa.ru/Index.aspx" : "https://merchant.roboxchange.com/Index.aspx"
     end
 
-    def pay_url
-      "#{base_url}?" + initial_options.map do |key, value| 
+    def pay_url(options = {})
+      options = options.slice(:currency, :description, :email, :culture)
+
+      "#{base_url}?" + initial_options.merge(options).map do |key, value| 
         "#{PARAMS_CONFORMITY[key.to_sym]}=#{value}" unless key =~ /^shp/
       end.compact!.join("&")
     end
