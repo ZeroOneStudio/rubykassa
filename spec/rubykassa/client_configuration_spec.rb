@@ -8,7 +8,8 @@ describe Rubykassa::Client do
       config.first_password = "first_password"
       config.second_password = "second_password"
       config.mode = :production
-     config.http_method = :post
+      config.http_method = :post
+      config.xml_http_method = :post
     end
   end
 
@@ -18,6 +19,7 @@ describe Rubykassa::Client do
     Rubykassa.second_password.should == "second_password"
     Rubykassa.mode.should == :production
     Rubykassa.http_method.should == :post
+    Rubykassa.xml_http_method.should == :post
   end
 
   it "should set default values" do
@@ -28,6 +30,7 @@ describe Rubykassa::Client do
     Rubykassa.first_password.should == "first_password"
     Rubykassa.second_password.should == "second_password"
     Rubykassa.mode.should == :test
+    Rubykassa.http_method.should == :get
     Rubykassa.http_method.should == :get
   end
 
@@ -46,4 +49,12 @@ describe Rubykassa::Client do
       end 
     }.to raise_error(Rubykassa::ConfigurationError, "Alailable http methods are :get or :post")
   end
+
+  it "should raise error when wrong xml_http_method is set" do
+    expect {     
+      Rubykassa.configure do |config|
+        config.xml_http_method = :bullshit
+      end 
+    }.to raise_error(Rubykassa::ConfigurationError, "Alailable xml http methods are :get or :post")
+  end  
 end

@@ -44,7 +44,7 @@ module Rubykassa
     end  
 
     def request url, params
-      if Rubykassa.http_method == :get
+      if Rubykassa.xml_http_method == :get
         converted_params = "?" + params.map {|key, value| "#{key}=#{value}" }.join("&")
         response = Net::HTTP.get_response(URI(url) + converted_params)
       else
