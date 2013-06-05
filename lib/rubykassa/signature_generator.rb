@@ -8,14 +8,11 @@ module Rubykassa
       custom_params_string = custom_params.present? ? ":#{custom_params}" : ""
 
       if kind == :payment  
-        password = Rubykassa.first_password
-        string = [Rubykassa.login, @total, @invoice_id, password].join(":") + custom_params_string
+        string = [Rubykassa.login, @total, @invoice_id, Rubykassa.first_password].join(":") + custom_params_string
       elsif kind == :result
-        password = Rubykassa.second_password
-        string = [@total, @invoice_id, password].join(":") + custom_params_string
+        string = [@total, @invoice_id, Rubykassa.second_password].join(":") + custom_params_string
       elsif kind == :success
-        password = Rubykassa.first_password
-        string = [@total, @invoice_id, password].join(":") + custom_params_string
+        string = [@total, @invoice_id, Rubykassa.first_password].join(":") + custom_params_string
       end
 
       signature = Digest::MD5.hexdigest(string)
