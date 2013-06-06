@@ -4,7 +4,7 @@ require 'multi_xml'
 require 'uri'
 
 module Rubykassa
-  class ApiError < StandardError; end
+  class InvalidResponseError < StandardError; end
 
   class XmlInterface
     attr_accessor :invoice_id, :total, :language
@@ -50,6 +50,7 @@ module Rubykassa
       else
         response = Net::HTTP.post_form(URI(url), params)
       end
+      raise InvalidResponseError, "Invalid response from the service" unless response.code == "200"
       MultiXml.parse(response.body)
     end
   end
