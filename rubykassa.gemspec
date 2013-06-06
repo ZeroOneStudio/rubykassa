@@ -13,8 +13,8 @@ Gem::Specification.new do |s|
   s.summary     = "Yet another Ruby wrapper for Robokassa API"
   s.description = "Yet another Ruby wrapper for Robokassa API aimed to make Robokassa integration even more easier"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["spec/**/*"]
+  s.files = `git ls-files`.split($\)
+  s.test_files = s.files.grep(%r{^(test|spec|features)/})
 
   s.add_dependency "rails", "~> 3.2.13"
   s.add_dependency "multi_xml"
