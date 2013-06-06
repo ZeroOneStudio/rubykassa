@@ -24,10 +24,4 @@ describe Rubykassa::XmlInterface do
   it "should correctly transform method name" do
     @xml_interface.send(:transform_method_name, "some_method_name").should == "SomeMethodName"
   end
-
-  it "should raise error when there is no success response from the server" do
-    expect {  
-      @xml_interface.send(:request, "https://merchant.roboxchange.com/WebService/Invalid_url", {})   
-    }.to raise_error(Rubykassa::InvalidResponseError, "Invalid response from the service")
-  end 
 end
