@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-require "rubykassa/engine"
+require 'rubykassa/engine'
 require 'rubykassa/client'
 require 'rubykassa/payment_interface'
 require 'rubykassa/xml_interface'

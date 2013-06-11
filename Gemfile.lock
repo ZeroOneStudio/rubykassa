@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rubykassa (0.0.1)
+    rubykassa (0.1.0)
       multi_xml
       rails (~> 3.2.13)
 

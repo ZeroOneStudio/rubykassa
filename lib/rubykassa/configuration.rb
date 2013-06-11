@@ -9,7 +9,7 @@ module Rubykassa
       self.second_password = "second_password"
       self.mode = :test
       self.http_method = :get
-      self.xml_http_method = :get
+      self.xml_http_method = :get      
     end
   end
 end
