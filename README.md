@@ -15,24 +15,24 @@ Yet another Ruby wrapper for [Robokassa API][]. Rubykassa took the best from [ro
 
 ## Installation
 
-    gem install rubykassa
-
-Or put to your `Gemfile`
+Add to your `Gemfile`:
 
     gem "rubykassa"
 
 ## Usage
 
-Create an initializer with the following code:
+Run `rails g rubykassa:install`, get an initializer with the following code:
 
     Rubykassa.configure do |config|
-      config.login = "your_login"
-      config.first_password = "first_password"
-      config.second_password = "second_password"
-      config.mode = :test
-      config.http_method = :get
-      config.xml_http_method = :get
+      config.login = ENV["ROBOKASSA_LOGIN"]
+      config.first_password = ENV["ROBOKASSA_FIRST_PASSWORD"]
+      config.second_password = ENV["ROBOKASSA_SECOND_PASSWORD"]
+      config.mode = :test # or :production
+      config.http_method = :get # or :post
+      config.xml_http_method = :get # or :post
     end
+
+and configure it with your credentials.    
 
 Mode is `:test` by default. For production you have to use `:production`.
 `http_method` and `xml_http_method` are `:get` by default but can be configured as `:post`
