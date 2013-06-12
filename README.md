@@ -37,7 +37,7 @@ and configure it with your credentials.
 Mode is `:test` by default. For production you have to use `:production`.
 `http_method` and `xml_http_method` are `:get` by default but can be configured as `:post`
 
-Once you are done, simple use `pay_url` helper in your view:
+Once you are done, simply use `pay_url` helper in your view:
 
     <%= pay_url "Pay with Robokassa", ivoice_id, total_sum %>
 
