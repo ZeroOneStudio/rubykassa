@@ -7,7 +7,7 @@ by [Zero One][]
 
 [Zero One]: http://zeroone.st
 
-Yet another Ruby wrapper for [Robokassa API][]. Rubykassa took the best from [robokassa gem][] and [Active Merchant Robokassa integration] but easier to use and setup.
+Yet another Ruby wrapper for [Robokassa API][]. Make Robokassa to work with your Rails project without pain. Rubykassa took the best from [robokassa gem][] and [Active Merchant Robokassa integration] but easier to use and setup.
 
 [Robokassa API]: http://robokassa.ru/ru/Doc/Ru/Interface.aspx
 [robokassa gem]: https://github.com/shaggyone/robokassa
