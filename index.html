@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Rubykassa by ZeroOneStudio</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/ZeroOneStudio/rubykassa">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Rubykassa</h1>
+            <h2>Yet another Ruby wrapper for Robokassa API</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/ZeroOneStudio/rubykassa/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/ZeroOneStudio/rubykassa/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h2>
+<a name="the-rubykassa-gem" class="anchor" href="#the-rubykassa-gem"><span class="octicon octicon-link"></span></a>The Rubykassa gem</h2>
+
+<p><a href="http://badge.fury.io/rb/rubykassa"><img src="https://badge.fury.io/rb/rubykassa.png" alt="Gem Version"></a>
+<a href="http://travis-ci.org/ZeroOneStudio/rubykassa"><img src="https://secure.travis-ci.org/ZeroOneStudio/rubykassa.png" alt="Build Status"></a></p>
+
+<p>by <a href="http://zeroone.st">Zero One</a></p>
+
+<p>Yet another Ruby wrapper for <a href="http://robokassa.ru/ru/Doc/Ru/Interface.aspx">Robokassa API</a>. Rubykassa took the best from <a href="https://github.com/shaggyone/robokassa">robokassa gem</a> and <a href="https://github.com/Shopify/active_merchant/tree/master/lib/active_merchant/billing/integrations/robokassa">Active Merchant Robokassa integration</a> but easier to use and setup.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add to your <code>Gemfile</code>:</p>
+
+<pre><code>gem "rubykassa"
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Run <code>rails g rubykassa:install</code>, get an initializer with the following code:</p>
+
+<pre><code>Rubykassa.configure do |config|
+  config.login = ENV["ROBOKASSA_LOGIN"]
+  config.first_password = ENV["ROBOKASSA_FIRST_PASSWORD"]
+  config.second_password = ENV["ROBOKASSA_SECOND_PASSWORD"]
+  config.mode = :test # or :production
+  config.http_method = :get # or :post
+  config.xml_http_method = :get # or :post
+end
+</code></pre>
+
+<p>and configure it with your credentials.    </p>
+
+<p>Mode is <code>:test</code> by default. For production you have to use <code>:production</code>.
+<code>http_method</code> and <code>xml_http_method</code> are <code>:get</code> by default but can be configured as <code>:post</code></p>
+
+<p>Once you are done, simply use <code>pay_url</code> helper in your view:</p>
+
+<pre><code>&lt;%= pay_url "Pay with Robokassa", ivoice_id, total_sum %&gt;
+</code></pre>
+
+<p>Additionally you may want to pass extra options. There is no problem:</p>
+
+<pre><code>&lt;%= pay_url "Pay with Robokassa", ivoice_id, total_sum, { description: "Invoice description", email: "foo@bar.com", currency: "WMZM", culture: :ru } %&gt;
+</code></pre>
+
+<p>If you need to implement Robokassa's XML interface functionality you have to the following:</p>
+
+<pre><code>xml_interface = Rubykassa::XmlInterface.new do
+  self.invoice_id = your_invioce_id
+  self.total = your_total_sum
+  self.language = :ru # can be :en, :ru is default
+end
+</code></pre>
+
+<p>then call whatever you need</p>
+
+<pre><code>xml_interface.get_currencies_list
+xml_interface.get_payment_methods
+xml_interface.get_rates
+xml_interface.op_state
+</code></pre>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>This project rocks and uses MIT-LICENSE
+Copyright (c) 2013 <a href="http://zeroone.st">Zero One</a></p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/ZeroOneStudio">ZeroOneStudio</a> can be found on <a href="https://github.com/ZeroOneStudio/rubykassa">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-41881276-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
