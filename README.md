@@ -2,6 +2,8 @@
 
 [![Gem Version](https://badge.fury.io/rb/rubykassa.png)](http://badge.fury.io/rb/rubykassa)
 [![Build Status](https://secure.travis-ci.org/ZeroOneStudio/rubykassa.png)](http://travis-ci.org/ZeroOneStudio/rubykassa)
+[![Coverage Status](https://coveralls.io/repos/ZeroOneStudio/rubykassa/badge.png)](https://coveralls.io/r/ZeroOneStudio/rubykassa)
+[![Dependency Status](https://gemnasium.com/ZeroOneStudio/rubykassa.png)](https://gemnasium.com/ZeroOneStudio/rubykassa)
 
 by [Zero One][]
 
