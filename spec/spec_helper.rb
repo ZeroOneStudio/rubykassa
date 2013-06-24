@@ -7,6 +7,6 @@ require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 
 require 'rspec/rails'
 require 'rubykassa'
+require 'coveralls'
 
-RSpec.configure do |config|
-end
+Coveralls.wear!
