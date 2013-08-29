@@ -39,7 +39,7 @@ describe Rubykassa::Client do
       Rubykassa.configure do |config|
         config.mode = :bullshit
       end 
-    }.to raise_error(Rubykassa::ConfigurationError, "Alailable modes are :test or :production")
+    }.to raise_error(Rubykassa::ConfigurationError, "Available modes are :test or :production")
   end
 
   it "should raise error when wrong http_method is set" do
@@ -47,7 +47,7 @@ describe Rubykassa::Client do
       Rubykassa.configure do |config|
         config.http_method = :bullshit
       end 
-    }.to raise_error(Rubykassa::ConfigurationError, "Alailable http methods are :get or :post")
+    }.to raise_error(Rubykassa::ConfigurationError, "Available http methods are :get or :post")
   end
 
   it "should raise error when wrong xml_http_method is set" do
@@ -55,6 +55,6 @@ describe Rubykassa::Client do
       Rubykassa.configure do |config|
         config.xml_http_method = :bullshit
       end 
-    }.to raise_error(Rubykassa::ConfigurationError, "Alailable xml http methods are :get or :post")
+    }.to raise_error(Rubykassa::ConfigurationError, "Available xml http methods are :get or :post")
   end  
 end
