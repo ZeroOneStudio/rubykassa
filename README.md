@@ -63,6 +63,18 @@ then call whatever you need
     xml_interface.get_rates
     xml_interface.op_state
 
+## Supported Rubies and Rails versions
+
+Rubies: 
+*1.9.3
+*2.0.0
+
+Rails:
+* ~> 3.0.0
+* ~> 3.1.0
+* ~> 3.2.0
+* ~> 4.0.0
+
 ## License
 
 This project rocks and uses MIT-LICENSE
