@@ -3,7 +3,10 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-Bundler.require(*Rails.groups)
+if defined?(Bundler)
+  ENV["RAILS_VERSION"] == "3.0.0" ? Bundler.require(:default, Rails.env) : Bundler.require(*Rails.groups)
+end
+
 require "rubykassa"
 
 module Dummy
