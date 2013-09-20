@@ -2,7 +2,15 @@
 require 'rubykassa/configuration'
 
 module Rubykassa
-  class ConfigurationError < StandardError; end
+  class ConfigurationError < StandardError
+    class << self
+      def raise_errors_for configuration
+        raise ConfigurationError, "Available modes are :test or :production" unless [:test, :production].include? configuration.mode
+        raise ConfigurationError, "Available http methods are :get or :post" unless [:get, :post].include? configuration.http_method
+        raise ConfigurationError, "Available xml http methods are :get or :post" unless [:get, :post].include? configuration.xml_http_method
+      end
+    end
+  end
 
   class Client
     class << self
@@ -11,10 +19,7 @@ module Rubykassa
       def configure
         self.configuration = Rubykassa::Configuration.new
         yield self.configuration
-
-        raise ConfigurationError, "Available modes are :test or :production" unless [:test, :production].include? self.configuration.mode
-        raise ConfigurationError, "Available http methods are :get or :post" unless [:get, :post].include? self.configuration.http_method
-        raise ConfigurationError, "Available xml http methods are :get or :post" unless [:get, :post].include? self.configuration.xml_http_method
+        ConfigurationError.raise_errors_for self.configuration
       end
     end
   end
