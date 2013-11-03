@@ -12,7 +12,7 @@ module Rubykassa
       signature:   "SignatureValue",
       email:       "Email",
       currency:    "IncCurrLabel",
-      description: "InvDesc",
+      description: "Desc",
       culture:     "Culture"
     }
 
