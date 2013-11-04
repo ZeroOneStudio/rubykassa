@@ -3,7 +3,7 @@ class RobokassaController < ApplicationController
   before_filter :create_notification, except: :fail
 
   def paid
-    if @notification.valid_response_signature?
+    if @notification.valid_result_signature?
       render text: @notification.success
     else
       render text: "fail"
