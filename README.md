@@ -5,6 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/ZeroOneStudio/rubykassa/badge.png)](https://coveralls.io/r/ZeroOneStudio/rubykassa)
 [![Code Climate](https://codeclimate.com/github/ZeroOneStudio/rubykassa.png)](https://codeclimate.com/github/ZeroOneStudio/rubykassa)
 [![Dependency Status](https://gemnasium.com/ZeroOneStudio/rubykassa.png)](https://gemnasium.com/ZeroOneStudio/rubykassa)
+[![tip for next commit](http://tip4commit.com/projects/107.svg)](http://tip4commit.com/projects/107)
 
 by [Zero One][]
 
