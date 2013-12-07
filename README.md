@@ -81,3 +81,7 @@ This project rocks and uses MIT-LICENSE
 Copyright (c) 2013 [Zero One][]
 
 [ZERO.ONE]: http://www.zeroone.st
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ZeroOneStudio/rubykassa/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
