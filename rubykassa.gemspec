@@ -12,9 +12,11 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/ZeroOneStudio/rubykassa"
   s.summary     = "Yet another Ruby wrapper for Robokassa API"
   s.description = "Yet another Ruby wrapper for Robokassa API aimed to make Robokassa integration even more easier"
+  
+  s.license     = "MIT"
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- spec/rubykassa/*`.split("\n")
+  s.files       = `git ls-files`.split("\n")
+  s.test_files  = `git ls-files -- spec/rubykassa/*`.split("\n")
 
   s.add_dependency "rails", ">= 3.0"
   s.add_dependency "multi_xml"
