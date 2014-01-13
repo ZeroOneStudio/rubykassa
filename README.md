@@ -68,6 +68,7 @@ then call whatever you need
 Rubies: 
 * 1.9.3
 * 2.0.0
+* 2.1.0
 
 Rails:
 * ~> 3.0.0
