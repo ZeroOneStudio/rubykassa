@@ -79,7 +79,7 @@ Rails:
 ## License
 
 This project rocks and uses MIT-LICENSE
-Copyright (c) 2013 [Zero One][]
+Copyright (c) 2013-2014 [Zero One][]
 
 [ZERO.ONE]: http://www.zeroone.st
 
