@@ -2,7 +2,6 @@
 module Rubykassa
   module ActionViewExtension
     def pay_url phrase, invoice_id, total, options = {}
-      phrase ||= "Pay"
       total, invoice_id  = total.to_s, invoice_id.to_s
       link_to phrase, Rubykassa.pay_url(invoice_id, total, params, options)
     end

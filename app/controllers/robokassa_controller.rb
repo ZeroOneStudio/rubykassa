@@ -22,9 +22,9 @@ class RobokassaController < ApplicationController
     render text: "fail"
   end
 
-private
+  private
 
-  def create_notification
-    @notification = Rubykassa::Notification.new params
-  end
+    def create_notification
+      @notification = Rubykassa::Notification.new params
+    end
 end
