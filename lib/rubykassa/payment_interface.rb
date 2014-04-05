@@ -34,8 +34,12 @@ module Rubykassa
       options = options.slice(:currency, :description, :email, :culture)
 
       "#{base_url}?" + initial_options.merge(options).map do |key, value| 
-        "#{PARAMS_CONFORMITY[key.to_sym]}=#{value}" unless key =~ /^shp/
-      end.compact!.join("&")
+        if key =~ /^shp/
+          "#{key}=#{value}"
+        else
+          "#{PARAMS_CONFORMITY[key]}=#{value}"
+        end
+      end.compact.join("&")
     end
 
     def initial_options

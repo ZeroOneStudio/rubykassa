@@ -1,3 +1,7 @@
+## 0.2.5
+
+* Fix bug with passing custom params
+
 ## 0.2.4
 
 * Fix naming issue with pay helper: rename 'link_to_pay' to 'pay_url'.
