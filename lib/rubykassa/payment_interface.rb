@@ -20,6 +20,7 @@ module Rubykassa
 
     def initialize &block
       instance_eval &block if block_given?
+      shpfy_params
     end
 
     def test_mode?
@@ -30,10 +31,10 @@ module Rubykassa
       test_mode? ? "http://test.robokassa.ru/Index.aspx" : "https://merchant.roboxchange.com/Index.aspx"
     end
 
-    def pay_url(options = {})
-      options = options.slice(:currency, :description, :email, :culture)
+    def pay_url(extra_params = {})
+      extra_params = extra_params.slice(:currency, :description, :email, :culture)
 
-      "#{base_url}?" + initial_options.merge(options).map do |key, value| 
+      "#{base_url}?" + initial_options.merge(extra_params).map do |key, value| 
         if key =~ /^shp/
           "#{key}=#{value}"
         else
@@ -48,7 +49,13 @@ module Rubykassa
         total: @total,
         invoice_id: @invoice_id,
         signature: generate_signature_for(:payment)
-      }.merge(Hash[@params.sort.map {|param_name| ["shp#{param_name[0]}".to_sym, param_name[1]]}])
+      }.merge(Hash[@params.sort.map {|param_name| [param_name[0], param_name[1]]}])
     end
+
+    private
+
+      def shpfy_params
+        @params = @params.map {|param_name| ["shp#{param_name[0]}".to_sym, param_name[1]]}
+      end
   end
 end

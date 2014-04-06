@@ -18,11 +18,11 @@ describe Rubykassa::PaymentInterface do
   end
 
   it "should return correct pay_url" do
-    @payment_interface.pay_url.should == "http://test.robokassa.ru/Index.aspx?MrchLogin=your_login&OutSum=1200&InvId=12&SignatureValue=96c0bbd4fc8f365455e949b1fbf5e3f4&shpfoo=bar"
+    @payment_interface.pay_url.should == "http://test.robokassa.ru/Index.aspx?MrchLogin=your_login&OutSum=1200&InvId=12&SignatureValue=bf0504363d89638669e057932857316c&shpfoo=bar"
   end
 
   it "should return correct pay_url when additional options passed" do
-    @payment_interface.pay_url({description: "desc", culture: "ru", email: "foo@bar.com", currency: ""}).should == "http://test.robokassa.ru/Index.aspx?MrchLogin=your_login&OutSum=1200&InvId=12&SignatureValue=96c0bbd4fc8f365455e949b1fbf5e3f4&shpfoo=bar&IncCurrLabel=&Desc=desc&Email=foo@bar.com&Culture=ru"
+    @payment_interface.pay_url({description: "desc", culture: "ru", email: "foo@bar.com", currency: ""}).should == "http://test.robokassa.ru/Index.aspx?MrchLogin=your_login&OutSum=1200&InvId=12&SignatureValue=bf0504363d89638669e057932857316c&shpfoo=bar&IncCurrLabel=&Desc=desc&Email=foo@bar.com&Culture=ru"
   end
 
   it "should return correct initial_options" do
@@ -30,7 +30,7 @@ describe Rubykassa::PaymentInterface do
       login: "your_login",
       total: 1200,
       invoice_id: 12,
-      signature: "96c0bbd4fc8f365455e949b1fbf5e3f4",
+      signature: "bf0504363d89638669e057932857316c",
       shpfoo: "bar"
     }
   end
