@@ -1,5 +1,7 @@
 ## Edge (not released)
 
+## 0.2.6
+
 * Fix bug with wrong signature generating with custom user params
 
 ## 0.2.5
