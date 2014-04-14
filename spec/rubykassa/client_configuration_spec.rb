@@ -32,6 +32,18 @@ describe Rubykassa::Client do
     Rubykassa.mode.should == :test
     Rubykassa.http_method.should == :get
     Rubykassa.http_method.should == :get
+    expect(Rubykassa.success_callback).to be_instance_of(Proc)
+    expect(Rubykassa.fail_callback).to be_instance_of(Proc)
+  end
+
+  it "should set success_callback" do
+    Rubykassa.configure do |config|
+      config.success_callback = -> {
+        2 + 5
+      }
+    end
+
+    expect(Rubykassa.success_callback.call).to eq(7)
   end
 
   it "should raise error when wrong mode is set" do
