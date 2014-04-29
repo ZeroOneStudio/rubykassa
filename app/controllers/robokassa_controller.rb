@@ -6,20 +6,20 @@ class RobokassaController < ApplicationController
     if @notification.valid_result_signature?
       render text: @notification.success
     else
-      render text: "fail"
+      Rubykassa.fail_callback.call
     end
   end
 
   def success
     if @notification.valid_success_signature?
-      render text: "success"
+      Rubykassa.success_callback.call
     else
-      render text: "fail"
+      Rubykassa.fail_callback.call
     end
   end
 
   def fail
-    render text: "fail"
+    Rubykassa.fail_callback.call
   end
 
   private

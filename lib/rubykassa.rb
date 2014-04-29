@@ -12,7 +12,7 @@ module Rubykassa
     Rubykassa::Client.configure &block
   end
 
-  %w(login first_password second_password mode http_method xml_http_method).map do |name|
+  %w(login first_password second_password mode http_method xml_http_method success_callback fail_callback).map do |name|
     define_method name do
       Rubykassa::Client.configuration.send(name)
     end
