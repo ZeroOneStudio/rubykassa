@@ -43,6 +43,16 @@ Also, you need to specify Result URL, Success URL and Fail URL at the "Technical
 * Success URL: `http://<your_domain>/robokassa/success`
 * Fail URL: `http://<your_domain>/robokassa/fail`
 
+To define custom success/fail callbacks you can also use the initializer:
+
+    Rubykassa.configure do |config|
+      ...
+      config.success_callback = -> { render text: 'success' }
+      config.fail_callback = -> { redirect_to root_path }
+    end
+
+Lambdas are called in RobokassaController so you can respond with [any kind that is supported by Rails](http://guides.rubyonrails.org/layouts_and_rendering.html#creating-responses)    
+
 Mode is `:test` by default. For production you have to use `:production`.
 `http_method` and `xml_http_method` are `:get` by default but can be configured as `:post`
 
