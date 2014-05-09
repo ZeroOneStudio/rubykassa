@@ -81,10 +81,9 @@ Rubies:
 * 2.1.0
 
 Rails:
-* ~> 3.0.0
-* ~> 3.1.0
-* ~> 3.2.0
+* ~> 3.2.18
 * ~> 4.0.0
+* ~> 4.1.0
 
 ## License
 
@@ -95,4 +94,3 @@ Copyright (c) 2013-2014 [Zero One][]
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ZeroOneStudio/rubykassa/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
