@@ -37,6 +37,12 @@ Run `rails g rubykassa:install`, get an initializer with the following code:
 
 and configure it with your credentials.    
 
+Also, you need to specify Result URL, Success URL and Fail URL at the "Technical Settings" (Технические настройки) in your Robokassa dashboard:
+
+* Result URL: `http://<your_domain>/robokassa/paid`
+* Success URL: `http://<your_domain>/robokassa/success`
+* Fail URL: `http://<your_domain>/robokassa/fail`
+
 Mode is `:test` by default. For production you have to use `:production`.
 `http_method` and `xml_http_method` are `:get` by default but can be configured as `:post`
 
@@ -75,10 +81,9 @@ Rubies:
 * 2.1.0
 
 Rails:
-* ~> 3.0.0
-* ~> 3.1.0
-* ~> 3.2.0
+* ~> 3.2.18
 * ~> 4.0.0
+* ~> 4.1.0
 
 ## License
 
@@ -89,4 +94,3 @@ Copyright (c) 2013-2014 [Zero One][]
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ZeroOneStudio/rubykassa/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
