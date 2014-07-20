@@ -12,12 +12,12 @@ module Rubykassa
       self.mode = :test
       self.http_method = :get
       self.xml_http_method = :get
-      self.success_callback = -> { 
+      self.success_callback = Proc.new do |controller, notification|
         render text: 'success'
-      }
-      self.fail_callback = -> { 
+      end
+      self.fail_callback = Proc.new do |controller, notification|
         render text: 'fail'
-      }
+      end
     end
   end
 end
