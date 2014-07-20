@@ -1,5 +1,7 @@
 ## Edge (not released)
 
+## 0.3.0
+
 * Add confugurable success and fail callbacks
 
 ## 0.2.6
