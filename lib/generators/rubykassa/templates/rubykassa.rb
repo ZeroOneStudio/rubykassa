@@ -6,4 +6,9 @@ Rubykassa.configure do |c|
   c.mode = :test # or :production
   c.http_method = :get # or :post
   c.xml_http_method = :get # or :post
+
+  # Define success or failure callbacks here like:
+
+  # config.success_callback = -> (controller, notification){ render text: 'success' }
+  # config.fail_callback = -> (controller, notification){ redirect_to root_path }
 end

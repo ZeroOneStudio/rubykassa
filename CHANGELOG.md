@@ -1,5 +1,13 @@
 ## Edge (not released)
 
+## 0.3.1
+
+* Pass `controller` and `notification` variables to callback block by @1um [#12][]
+* Create `@notification` for `RobokassaController#fail` by @1um [#13][]
+
+[#12]:https://github.com/ZeroOneStudio/rubykassa/pull/12
+[#13]:https://github.com/ZeroOneStudio/rubykassa/pull/13
+
 ## 0.3.0
 
 * Add confugurable success and fail callbacks
