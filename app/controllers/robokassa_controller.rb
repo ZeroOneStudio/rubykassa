@@ -4,7 +4,7 @@ class RobokassaController < ApplicationController
 
   def paid
     if @notification.valid_result_signature?
-      render text: @notification.success
+      Rubykassa.result_callback.call(self, @notification)
     else
       Rubykassa.fail_callback.call(self, @notification)
     end

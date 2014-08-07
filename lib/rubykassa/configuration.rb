@@ -4,6 +4,7 @@ module Rubykassa
     attr_accessor :login, :first_password, :second_password, :mode, :http_method, :xml_http_method
     attr_accessor :success_callback
     attr_accessor :fail_callback
+    attr_accessor :result_callback
 
     def initialize
       self.login = "your_login"
@@ -18,6 +19,9 @@ module Rubykassa
       self.fail_callback = Proc.new do |controller, notification|
         render text: 'fail'
       end
+      self.result_callback = Proc.new do |controller, notification|
+        render text: notification.success
+      end      
     end
   end
 end
