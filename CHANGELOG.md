@@ -1,6 +1,10 @@
 ## Edge (not released)
 
-* Add confugurable result callback
+## 0.3.2
+
+* Add confugurable result callback [#14][]
+
+[#14]:https://github.com/ZeroOneStudio/rubykassa/pull/14
 
 ## 0.3.1
 
