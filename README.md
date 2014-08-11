@@ -47,8 +47,8 @@ To define custom success/fail callbacks you can also use the initializer:
 
     Rubykassa.configure do |config|
       ...
-      config.success_callback = -> (controller, notification){ render text: 'success' }
-      config.fail_callback = -> (controller, notification){ redirect_to root_path }
+      config.success_callback = -> (controller, notification){ controller.render text: 'success' }
+      config.fail_callback = -> (controller, notification){ controller.redirect_to controller.root_path }
     end
 
 Lambdas are called in RobokassaController so you can respond with [any kind that is supported by Rails](http://guides.rubyonrails.org/layouts_and_rendering.html#creating-responses)    
