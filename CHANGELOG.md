@@ -1,5 +1,7 @@
 ## Edge (not released)
 
+* Add confugurable result callback
+
 ## 0.3.1
 
 * Pass `controller` and `notification` variables to callback block by @1um [#12][]
