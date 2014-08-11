@@ -5,6 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/ZeroOneStudio/rubykassa/badge.png)](https://coveralls.io/r/ZeroOneStudio/rubykassa)
 [![Code Climate](https://codeclimate.com/github/ZeroOneStudio/rubykassa.png)](https://codeclimate.com/github/ZeroOneStudio/rubykassa)
 [![Dependency Status](https://gemnasium.com/ZeroOneStudio/rubykassa.png)](https://gemnasium.com/ZeroOneStudio/rubykassa)
+[![Inline docs](http://inch-ci.org/github/ZeroOneStudio/rubykassa.svg?branch=master)](http://inch-ci.org/github/ZeroOneStudio/rubykassa)
 
 by [Zero One][]
 
