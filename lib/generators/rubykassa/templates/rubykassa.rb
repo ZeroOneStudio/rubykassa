@@ -10,12 +10,12 @@ Rubykassa.configure do |config|
 
   # Result callback is called in RobokassaController#paid action if valid signature
   # was generated. It should always return "OK#{ invoice_id }" string, so implement
-  # your custom logic above `controller.render text: notification.success` line
+  # your custom logic above `render text: notification.success` line
 
-  config.result_callback = -> (controller, notification) { controller.render text: notification.success }
+  config.result_callback = -> (notification) { render text: notification.success }
 
   # Define success or failure callbacks here like:
 
-  # config.success_callback = -> (controller, notification) { controller.render text: 'success' }
-  # config.fail_callback = -> (controller, notification) { controller.redirect_to controller.root_path }
+  # config.success_callback = -> (notification) { render text: 'success' }
+  # config.fail_callback = -> (notification) { redirect_to root_path }
 end
