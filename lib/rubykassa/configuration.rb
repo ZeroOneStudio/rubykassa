@@ -1,10 +1,12 @@
 # -*- encoding : utf-8 -*-
 module Rubykassa
   class Configuration
-    attr_accessor :login, :first_password, :second_password, :mode, :http_method, :xml_http_method
-    attr_accessor :success_callback
-    attr_accessor :fail_callback
-    attr_accessor :result_callback
+    ATTRIBUTES = [
+      :login, :first_password, :second_password, :mode, :http_method, :xml_http_method,
+      :success_callback, :fail_callback, :result_callback
+    ]
+
+    attr_accessor *ATTRIBUTES
 
     def initialize
       self.login = "your_login"
