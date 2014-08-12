@@ -15,9 +15,9 @@ module Rubykassa
       self.mode             = :test
       self.http_method      = :get
       self.xml_http_method  = :get
-      self.success_callback = -> (notification) { render text: 'success' }
-      self.fail_callback    = -> (notification) { render text: 'fail' }
-      self.result_callback  = -> (notification) { render text: notification.success   }
+      self.success_callback = ->(notification) { render text: 'success' }
+      self.fail_callback    = ->(notification) { render text: 'fail' }
+      self.result_callback  = ->(notification) { render text: notification.success   }
     end
   end
 end
