@@ -1,5 +1,7 @@
 ## Edge (not released)
 
+## 0.4.0
+
 * Simplify callbacks logic: no more necessity to pass `controller` variable to lambda. Thanks @BrainNya for active promotion.
 
 ## 0.3.2
