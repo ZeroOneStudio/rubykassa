@@ -12,10 +12,10 @@ Rubykassa.configure do |config|
   # was generated. It should always return "OK#{ invoice_id }" string, so implement
   # your custom logic above `render text: notification.success` line
 
-  config.result_callback = -> (notification) { render text: notification.success }
+  config.result_callback = ->(notification) { render text: notification.success }
 
   # Define success or failure callbacks here like:
 
-  # config.success_callback = -> (notification) { render text: 'success' }
-  # config.fail_callback = -> (notification) { redirect_to root_path }
+  # config.success_callback = ->(notification) { render text: 'success' }
+  # config.fail_callback = ->(notification) { redirect_to root_path }
 end
