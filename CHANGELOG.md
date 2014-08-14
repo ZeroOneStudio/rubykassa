@@ -1,8 +1,14 @@
 ## Edge (not released)
 
+* force converting notification params to `HashWithIndifferentAccess` by @shir [#17][]
+
+[#17]:https://github.com/ZeroOneStudio/rubykassa/pull/17
+
 ## 0.4.1
 
-* Add support html options in params.
+* Add support html options in params by @JuraSN [#16][]
+
+[#16]:https://github.com/ZeroOneStudio/rubykassa/pull/16
 
 ## 0.4.0
 
