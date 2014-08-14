@@ -68,13 +68,13 @@ Additionally you may want to pass extra options. There is no problem:
 
     <%= pay_url "Pay with Robokassa", ivoice_id, total_sum, { description: "Invoice description", email: "foo@bar.com", currency: "WMZM", culture: :ru } %>
 
-HTML options example:
-
-    <%= pay_url "Pay with Robokassa", ivoice_id, total_sum, { html: { class: 'btn btn-primary btn-bg' }}
-
 Or if you would like to pass some custom params use `custom` key in options hash:
 
-    <%= pay_url "Pay with Robokassa", ivoice_id, total_sum, { description: "Invoice description", email: "foo@bar.com", currency: "WMZM", culture: :ru, custom: { param1: "value1", param2: "value2" }} %>        
+    <%= pay_url "Pay with Robokassa", ivoice_id, total_sum, { description: "Invoice description", email: "foo@bar.com", currency: "WMZM", culture: :ru, custom: { param1: "value1", param2: "value2" }} %>      
+
+You can also pass some HTML options with `html` key in options hash (Bootstrap 3 example):
+
+    <%= pay_url "Pay with Robokassa", ivoice_id, total_sum, { html: { class: 'btn btn-primary btn-bg' }}
 
 If you need to implement Robokassa's XML interface functionality you have to the following:
 

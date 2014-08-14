@@ -1,4 +1,7 @@
 ## Edge (not released)
+
+## 0.4.1
+
 * Add support html options in params.
 
 ## 0.4.0
