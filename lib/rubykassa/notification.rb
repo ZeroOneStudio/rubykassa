@@ -9,8 +9,8 @@ module Rubykassa
 
     def initialize params
       @params = HashWithIndifferentAccess.new params
-      @invoice_id = params["InvId"]
-      @total = params["OutSum"]
+      @invoice_id = @params["InvId"]
+      @total = @params["OutSum"]
     end
 
     %w(result success).map do |kind|
