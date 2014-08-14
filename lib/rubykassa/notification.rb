@@ -8,7 +8,7 @@ module Rubykassa
     attr_accessor :params
 
     def initialize params
-      @params = params
+      @params = HashWithIndifferentAccess.new params
       @invoice_id = params["InvId"]
       @total = params["OutSum"]
     end
