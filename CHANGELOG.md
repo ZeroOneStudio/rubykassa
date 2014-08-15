@@ -1,8 +1,11 @@
 ## Edge (not released)
 
-* force converting notification params to `HashWithIndifferentAccess` by @shir [#17][]
+## 0.4.2
+
+* force converting notification params to `HashWithIndifferentAccess` by @shir [#17][], [#18][]
 
 [#17]:https://github.com/ZeroOneStudio/rubykassa/pull/17
+[#18]:https://github.com/ZeroOneStudio/rubykassa/pull/18
 
 ## 0.4.1
 
