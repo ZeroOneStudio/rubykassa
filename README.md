@@ -17,6 +17,10 @@ Yet another Ruby wrapper for [Robokassa API][]. Make Robokassa to work with your
 [robokassa gem]: https://github.com/shaggyone/robokassa
 [Active Merchant Robokassa integration]: https://github.com/Shopify/active_merchant/tree/master/lib/active_merchant/billing/integrations/robokassa
 
+## Have questions?
+
+[![Gitter chat](https://badges.gitter.im/ZeroOneStudio/rubykassa.png)](https://gitter.im/ZeroOneStudio/rubykassa)
+
 ## Installation
 
 Add to your `Gemfile`:
