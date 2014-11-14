@@ -9,14 +9,12 @@ module Rubykassa
       custom_params = options[:custom] ||= {}
       html_params = options[:html] ||= {}
 
-      args = [phrase, Rubykassa.pay_url(invoice_id, total, custom_params, extra_params), html_params]
-
       if block_given?
-        args.shift
-        args << block
+        link_to Rubykassa.pay_url(invoice_id, total, custom_params, extra_params), html_params, &block
+      else
+        link_to phrase, Rubykassa.pay_url(invoice_id, total, custom_params, extra_params), html_params
       end
       
-      link_to(*args)
     end
   end
 end
