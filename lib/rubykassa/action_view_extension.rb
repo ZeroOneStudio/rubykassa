@@ -15,7 +15,7 @@ module Rubykassa
         args = [phrase, Rubykassa.pay_url(invoice_id, total, custom_params, extra_params), html_params]
       end
 
-      link_to args
+      link_to(*args)
     end
   end
 end
