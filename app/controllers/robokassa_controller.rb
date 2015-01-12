@@ -1,6 +1,11 @@
 # -*- encoding : utf-8 -*-
 class RobokassaController < ApplicationController
-  before_filter :create_notification
+
+  if respond_to?(:before_action)
+    before_action :create_notification
+  else
+    before_filter :create_notification
+  end
 
   def paid
     if @notification.valid_result_signature?
