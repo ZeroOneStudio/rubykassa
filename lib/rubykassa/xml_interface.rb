@@ -25,15 +25,26 @@ module Rubykassa
       request(base_url + transform_method_name(__method__), Hash["MerchantLogin", Rubykassa.login, "IncCurrLabel", "", "OutSum", @total.to_s, "Language", @language])
     end
 
-    def op_state
-      request(base_url + transform_method_name(__method__), Hash["MerchantLogin", Rubykassa.login, "InvoiceID", @invoice_id.to_s, "Signature", generate_signature])
+    def op_state(additional_params = {})
+      params = Hash["MerchantLogin", Rubykassa.login, "InvoiceID", @invoice_id.to_s, "Signature", generate_signature]
+      params.merge!(additional_params) if test_mode?
+
+      request(base_url + transform_method_name(__method__), params)
     end
 
     def base_url
-      "https://merchant.roboxchange.com/WebService/Service.asmx/"
+      if test_mode?
+        "http://test.robokassa.ru/Webservice/Service.asmx/"
+      else
+        "https://merchant.roboxchange.com/WebService/Service.asmx/"
+      end
     end
 
     private
+
+    def test_mode?
+      Rubykassa.mode == :test
+    end
 
     def generate_signature
       Digest::MD5.hexdigest("#{Rubykassa.login}:#{@invoice_id}:#{Rubykassa.second_password}")

@@ -95,6 +95,8 @@ then call whatever you need
     xml_interface.get_rates
     xml_interface.op_state
 
+In test mode, `op_state` accepts hash with additional attributes you would like to get back with response, for example `{ 'StateCode' => 5 }` (more about [StateCode](http://robokassa.ru/en/Doc/En/Interface.aspx#interfeys)). Please note, that any additional parameters to `op_state` are discarded in production mode.
+
 ## Supported Rubies and Rails versions
 
 Rubies:

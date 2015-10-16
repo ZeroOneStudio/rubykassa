@@ -1,5 +1,10 @@
 ## Edge (not released)
 
+* Change `XmlInterface` to support dynamic attributes in initialzer, add posibility to use it in test mode by @vidmantas [#23][], [#24][]
+
+[#23]:https://github.com/ZeroOneStudio/rubykassa/pull/23
+[#24]:https://github.com/ZeroOneStudio/rubykassa/pull/24
+
 ## 0.4.2
 
 * force converting notification params to `HashWithIndifferentAccess` by @shir [#17][], [#18][]
