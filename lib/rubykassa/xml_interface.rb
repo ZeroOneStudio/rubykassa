@@ -10,7 +10,7 @@ module Rubykassa
     attr_accessor :invoice_id, :total, :language
 
     def initialize &block
-      instance_eval &block if block_given?
+      yield self if block_given?
     end
 
     def get_currencies
@@ -41,7 +41,7 @@ module Rubykassa
 
     def transform_method_name meth
       meth.to_s.split('_').map(&:capitalize).join(' ').gsub(/\s/, "")
-    end  
+    end
 
     def request url, params
       if Rubykassa.xml_http_method == :get

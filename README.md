@@ -40,7 +40,7 @@ Run `rails g rubykassa:install`, get an initializer with the following code:
       config.xml_http_method = :get # or :post
     end
 
-and configure it with your credentials.    
+and configure it with your credentials.
 
 Also, you need to specify Result URL, Success URL and Fail URL at the "Technical Settings" (Технические настройки) in your Robokassa dashboard:
 
@@ -74,7 +74,7 @@ Additionally you may want to pass extra options. There is no problem:
 
 Or if you would like to pass some custom params use `custom` key in options hash:
 
-    <%= pay_url "Pay with Robokassa", ivoice_id, total_sum, { description: "Invoice description", email: "foo@bar.com", currency: "WMZM", culture: :ru, custom: { param1: "value1", param2: "value2" }} %>      
+    <%= pay_url "Pay with Robokassa", ivoice_id, total_sum, { description: "Invoice description", email: "foo@bar.com", currency: "WMZM", culture: :ru, custom: { param1: "value1", param2: "value2" }} %>
 
 You can also pass some HTML options with `html` key in options hash (Bootstrap 3 example):
 
@@ -82,10 +82,10 @@ You can also pass some HTML options with `html` key in options hash (Bootstrap 3
 
 If you need to implement Robokassa's XML interface functionality you have to the following:
 
-    xml_interface = Rubykassa::XmlInterface.new do
-      self.invoice_id = your_invioce_id
-      self.total = your_total_sum
-      self.language = :ru # can be :en, :ru is default
+    xml_interface = Rubykassa::XmlInterface.new do |interface|
+      interface.invoice_id = your_invioce_id
+      interface.total = your_total_sum
+      interface.language = :ru # can be :en, :ru is default
     end
 
 then call whatever you need
@@ -97,7 +97,7 @@ then call whatever you need
 
 ## Supported Rubies and Rails versions
 
-Rubies: 
+Rubies:
 * 1.9.3
 * 2.0.0
 * 2.1.0
