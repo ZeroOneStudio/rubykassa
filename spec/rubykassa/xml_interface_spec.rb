@@ -2,26 +2,33 @@
 require 'spec_helper'
 
 describe Rubykassa::XmlInterface do
-  before(:each) do
-    @xml_interface = Rubykassa::XmlInterface.new do
-      self.invoice_id = 12
-      self.total = 1200
-      self.language =:ru
-    end
-
-    Rubykassa.configure do |config|
+  subject do
+    described_class.new do |interface|
+      interface.invoice_id = invoice_id
+      interface.total = total
+      interface.language = language
     end
   end
 
-  it "should return correct base_url" do
-    @xml_interface.base_url.should == "https://merchant.roboxchange.com/WebService/Service.asmx/"
+  let(:invoice_id) { 12 }
+  let(:total) { 12_000 }
+  let(:language) { :ru }
+
+  it "sets all passed attributes into initializer block" do
+    expect(subject.invoice_id).to eq(invoice_id)
+    expect(subject.total).to eq(total)
+    expect(subject.language).to eq(language)
   end
 
-  it "should generate correct signature" do
-    @xml_interface.send(:generate_signature).should == "dafff2859f7fd4d110badc476c90fb39"
+  it "returns correct base_url" do
+    expect(subject.base_url).to eq("https://merchant.roboxchange.com/WebService/Service.asmx/")
   end
 
-  it "should correctly transform method name" do
-    @xml_interface.send(:transform_method_name, "some_method_name").should == "SomeMethodName"
+  it "generates correct signature" do
+    expect(subject.send(:generate_signature)).to eq("dafff2859f7fd4d110badc476c90fb39")
+  end
+
+  it "correctly transforms method name" do
+    expect(subject.send(:transform_method_name, "some_method_name")).to eq("SomeMethodName")
   end
 end
