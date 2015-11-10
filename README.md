@@ -61,6 +61,8 @@ Lambdas are called in RobokassaController so you can respond with [any kind that
 
 NOTE: `result_callback` should always return `"OK#{ invoice_id }"` string. So, implement your custom logic above `render text: notification.success` line.
 
+IMPORTANT: Don't forget to restart web server after every change
+
 Mode is `:test` by default. For production you have to use `:production`.
 `http_method` and `xml_http_method` are `:get` by default but can be configured as `:post`
 
