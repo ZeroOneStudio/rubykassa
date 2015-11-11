@@ -101,15 +101,7 @@ In test mode, `op_state` accepts hash with additional attributes you would like 
 
 ## Supported Rubies and Rails versions
 
-Rubies:
-* 1.9.3
-* 2.0.0
-* 2.1.0
-
-Rails:
-* ~> 3.2.18
-* ~> 4.0.0
-* ~> 4.1.0
+See the CI build [![Build Status](https://secure.travis-ci.org/ZeroOneStudio/rubykassa.png)](http://travis-ci.org/ZeroOneStudio/rubykassa)
 
 ## License
 
