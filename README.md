@@ -40,7 +40,7 @@ Run `rails g rubykassa:install`, get an initializer with the following code:
       config.xml_http_method = :get # or :post
     end
 
-and configure it with your credentials.
+and configure it with your credentials. NB! Keep in mind that we are using environment variables. So do not forget to configure your `ENV`. For example using [figaro gem](https://github.com/laserlemon/figaro).
 
 Also, you need to specify Result URL, Success URL and Fail URL at the "Technical Settings" (Технические настройки) in your Robokassa dashboard:
 
