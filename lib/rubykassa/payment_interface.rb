@@ -5,6 +5,8 @@ module Rubykassa
   class PaymentInterface
     include SignatureGenerator
 
+    BASE_URL = "https://auth.robokassa.ru/Merchant/Index.aspx"
+
     PARAMS_CONFORMITY = {
       login:       "MerchantLogin",
       total:       "OutSum",
@@ -28,14 +30,10 @@ module Rubykassa
       Rubykassa.mode == :test
     end
 
-    def base_url
-      test_mode? ? "https://auth.robokassa.ru/Merchant/Index.aspx" : "https://merchant.roboxchange.com/Index.aspx"
-    end
-
     def pay_url(extra_params = {})
       extra_params = extra_params.slice(:currency, :description, :email, :culture)
 
-      "#{base_url}?" + initial_options.merge(extra_params).map do |key, value|
+      "#{BASE_URL}?" + initial_options.merge(extra_params).map do |key, value|
         if key =~ /^shp/
           "#{key}=#{value}"
         else
