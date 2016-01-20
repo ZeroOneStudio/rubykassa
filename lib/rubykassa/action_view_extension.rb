@@ -1,12 +1,20 @@
 # -*- encoding : utf-8 -*-
 module Rubykassa
   module ActionViewExtension
-    def pay_url phrase, invoice_id, total, options = {}
+    def pay_url(phrase = nil, invoice_id = nil, total = nil, options = {}, &block)
+      invoice_id, options, total = phrase, total, invoice_id if block_given?
       total, invoice_id  = total.to_s, invoice_id.to_s
+
       extra_params  = options.except([:custom, :html])
       custom_params = options[:custom] ||= {}
       html_params = options[:html] ||= {}
-      link_to phrase, Rubykassa.pay_url(invoice_id, total, custom_params, extra_params), html_params
+
+      if block_given?
+        link_to Rubykassa.pay_url(invoice_id, total, custom_params, extra_params), html_params, &block
+      else
+        link_to phrase, Rubykassa.pay_url(invoice_id, total, custom_params, extra_params), html_params
+      end
+
     end
   end
 end
