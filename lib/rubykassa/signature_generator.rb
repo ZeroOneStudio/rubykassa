@@ -1,8 +1,8 @@
 # -*- encoding : utf-8 -*-
 module Rubykassa
   module SignatureGenerator
-    def generate_signature_for kind
-      raise ArgumentError, "Available kinds are only :payment, :result or :success" unless [:success, :payment, :result].include? kind      
+    def generate_signature_for(kind)
+      raise ArgumentError, "Available kinds are only :payment, :result or :success" unless [:success, :payment, :result].include?(kind)
       Digest::MD5.hexdigest(params_string(kind))
     end
 

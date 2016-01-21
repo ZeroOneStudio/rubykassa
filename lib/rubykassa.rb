@@ -8,7 +8,7 @@ require 'rubykassa/notification'
 module Rubykassa
   extend self
 
-  def configure &block
+  def configure(&block)
     Rubykassa::Client.configure &block
   end
 
@@ -18,7 +18,7 @@ module Rubykassa
     end
   end
 
-  def pay_url invoice_id, total, custom_params, extra_params = {}
+  def pay_url(invoice_id, total, custom_params, extra_params = {})
     Rubykassa::PaymentInterface.new do
       self.total      = total
       self.invoice_id = invoice_id

@@ -32,19 +32,6 @@ describe Rubykassa::XmlInterface do
     expect(subject.send(:transform_method_name, "some_method_name")).to eq("SomeMethodName")
   end
 
-  describe "#base_url" do
-    subject { described_class.new.base_url }
-    context "sets to test URL when in test mode" do
-      before { Rubykassa.configure { |c| c.mode = :test } }
-      it { is_expected.to eq("http://test.robokassa.ru/Webservice/Service.asmx/") }
-    end
-
-    context "uses production URL on production" do
-      before { Rubykassa.configure { |c| c.mode = :production } }
-      it { is_expected.to eq("https://merchant.roboxchange.com/WebService/Service.asmx/") }
-    end
-  end
-
   describe "#op_state" do
     subject { described_class.new.op_state(params) }
 
@@ -60,12 +47,12 @@ describe Rubykassa::XmlInterface do
 
       context "accepts additional params with test mode" do
         before { Rubykassa.configure { |c| c.mode = :test } }
-        it { is_expected.to eq("http://test.robokassa.ru/Webservice/Service.asmx/OpState?MerchantLogin=your_login&InvoiceID=&Signature=7b7d63d7d72c05ee8470f467bda8adf1&StateCode=5") }
+        it { is_expected.to eq("https://auth.robokassa.ru/Merchant/WebService/Service.asmx/OpState?MerchantLogin=your_login&InvoiceID=&Signature=7b7d63d7d72c05ee8470f467bda8adf1&isTest=1&StateCode=5") }
       end
 
       context "ignores additional params with production mode" do
         before { Rubykassa.configure { |c| c.mode = :production } }
-        it { is_expected.to eq("https://merchant.roboxchange.com/WebService/Service.asmx/OpState?MerchantLogin=your_login&InvoiceID=&Signature=7b7d63d7d72c05ee8470f467bda8adf1") }
+        it { is_expected.to eq("https://auth.robokassa.ru/Merchant/WebService/Service.asmx/OpState?MerchantLogin=your_login&InvoiceID=&Signature=7b7d63d7d72c05ee8470f467bda8adf1&isTest=0") }
       end
     end
   end

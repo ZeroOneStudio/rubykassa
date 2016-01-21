@@ -19,5 +19,17 @@ module Rubykassa
       self.fail_callback    = ->(notification) { render text: 'fail' }
       self.result_callback  = ->(notification) { render text: notification.success   }
     end
+
+    def correct_mode?
+      [:test, :production].include?(mode)
+    end
+
+    def correct_http_method?
+      [:get, :post].include?(http_method)
+    end
+
+    def correct_xml_http_method?
+      [:get, :post].include?(xml_http_method)
+    end
   end
 end

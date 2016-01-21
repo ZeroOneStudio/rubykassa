@@ -5,7 +5,7 @@ module Rubykassa
   class PaymentInterface
     include SignatureGenerator
 
-    BASE_URL = "https://auth.robokassa.ru/Merchant/Index.aspx"
+    BASE_URL = "https://auth.robokassa.ru/Merchant/Index.aspx".freeze
 
     PARAMS_CONFORMITY = {
       login:       "MerchantLogin",
