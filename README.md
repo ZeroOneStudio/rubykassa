@@ -78,6 +78,12 @@ Or if you would like to pass some custom params use `custom` key in options hash
 
     <%= pay_url "Pay with Robokassa", ivoice_id, total_sum, { description: "Invoice description", email: "foo@bar.com", currency: "WMZM", culture: :ru, custom: { param1: "value1", param2: "value2" }} %>
 
+Also `pay_url` helper can accept block:
+
+    <%= pay_url ivoice_id, total_sum do %>
+      Pay with Robokassa
+    <% end %>
+
 You can also pass some HTML options with `html` key in options hash (Bootstrap 3 example):
 
     <%= pay_url "Pay with Robokassa", ivoice_id, total_sum, { html: { class: 'btn btn-primary btn-bg' }}
