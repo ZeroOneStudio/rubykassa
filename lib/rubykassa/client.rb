@@ -9,7 +9,7 @@ module Rubykassa
           raise ConfigurationError, "Ivalid mode: only :test or :production are allowed"
         end
 
-        if !configuration.correct_http_method? || !configuration.http_method?
+        if !configuration.correct_http_method? || !configuration.correct_xml_http_method?
           raise ConfigurationError, "Ivalid http method: only :get or :post are allowed"
         end
       end
