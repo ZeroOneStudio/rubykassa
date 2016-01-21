@@ -14,7 +14,7 @@ describe Rubykassa::Client do
   end
 
   it "should set configuration information correctly" do
-    Rubykassa.login.should == "name"    
+    Rubykassa.login.should == "name"
     Rubykassa.first_password.should == "first_password"
     Rubykassa.second_password.should == "second_password"
     Rubykassa.mode.should == :production
@@ -26,7 +26,7 @@ describe Rubykassa::Client do
     Rubykassa.configure do |config|
     end
 
-    Rubykassa.login.should == "your_login"    
+    Rubykassa.login.should == "your_login"
     Rubykassa.first_password.should == "first_password"
     Rubykassa.second_password.should == "second_password"
     Rubykassa.mode.should == :test
@@ -47,26 +47,26 @@ describe Rubykassa::Client do
   end
 
   it "should raise error when wrong mode is set" do
-    expect {     
+    expect {
       Rubykassa.configure do |config|
         config.mode = :bullshit
-      end 
-    }.to raise_error(Rubykassa::ConfigurationError, "Available modes are :test or :production")
+      end
+    }.to raise_error(Rubykassa::ConfigurationError, "Ivalid mode: only :test or :production are allowed")
   end
 
   it "should raise error when wrong http_method is set" do
-    expect {     
+    expect {
       Rubykassa.configure do |config|
         config.http_method = :bullshit
-      end 
-    }.to raise_error(Rubykassa::ConfigurationError, "Available http methods are :get or :post")
+      end
+    }.to raise_error(Rubykassa::ConfigurationError, "Ivalid http method: only :get or :post are allowed")
   end
 
   it "should raise error when wrong xml_http_method is set" do
-    expect {     
+    expect {
       Rubykassa.configure do |config|
         config.xml_http_method = :bullshit
-      end 
-    }.to raise_error(Rubykassa::ConfigurationError, "Available xml http methods are :get or :post")
-  end  
+      end
+    }.to raise_error(Rubykassa::ConfigurationError, "Ivalid http method: only :get or :post are allowed")
+  end
 end
