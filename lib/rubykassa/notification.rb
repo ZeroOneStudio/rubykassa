@@ -4,7 +4,8 @@ module Rubykassa
   class Notification
     include SignatureGenerator
 
-    attr_accessor :params, :invoice_id, :total
+    attr_accessor :params
+    attr_reader :invoice_id, :total
 
     def initialize(params = {})
       @params = HashWithIndifferentAccess.new(params)
