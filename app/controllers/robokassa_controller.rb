@@ -1,4 +1,4 @@
-class RobokassaController < ApplicationController
+class RobokassaController < ActionController::Base
   if respond_to?(:before_action)
     before_action :create_notification
   else
