@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe Rubykassa::Notification do
+  before(:each) do
+    Rubykassa.configure do |config|
+    end
+  end
+
   it 'should return correct valid_result_signature?' do
     params = { 'InvId' => '12',
                'OutSum' => '1200',

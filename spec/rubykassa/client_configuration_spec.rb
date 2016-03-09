@@ -9,6 +9,7 @@ describe Rubykassa::Client do
       config.mode = :production
       config.http_method = :post
       config.xml_http_method = :post
+      config.hash_algorithm = :md5
     end
   end
 
@@ -29,7 +30,8 @@ describe Rubykassa::Client do
     expect(Rubykassa.second_password).to eq 'second_password'
     expect(Rubykassa.mode).to eq :test
     expect(Rubykassa.http_method).to eq :get
-    expect(Rubykassa.http_method).to eq :get
+    expect(Rubykassa.xml_http_method).to eq :get
+    expect(Rubykassa.hash_algorithm).to eq :md5
     expect(Rubykassa.success_callback).to be_instance_of(Proc)
     expect(Rubykassa.fail_callback).to be_instance_of(Proc)
   end
@@ -66,5 +68,14 @@ describe Rubykassa::Client do
       end
     }.to raise_error(Rubykassa::ConfigurationError,
                      Rubykassa::ConfigurationError::HTTP_METHOD_MESSAGE)
+  end
+
+  it 'should raise error when wrong hash_algorithms is set' do
+    expect {
+      Rubykassa.configure do |config|
+        config.hash_algorithm = :bullshit
+      end
+    }.to raise_error(Rubykassa::ConfigurationError,
+                     Rubykassa::ConfigurationError::HASH_ALGORITHM_MESSAGE)
   end
 end
