@@ -3,9 +3,11 @@
 * Change `XmlInterface` to support dynamic attributes in initialzer, add posibility to use it in test mode by @vidmantas [#23][], [#24][]
 * Update base URL to reflect the changes in Robokassa API.
 * Allow `pay_url` to accept block
+* Hash algorithms implemented (Алгоритм расчёта хэша — http://docs.robokassa.ru/#3733) [#29][]
 
 [#23]:https://github.com/ZeroOneStudio/rubykassa/pull/23
 [#24]:https://github.com/ZeroOneStudio/rubykassa/pull/24
+[#29]:https://github.com/ZeroOneStudio/rubykassa/pull/29
 
 ## 0.4.2
 

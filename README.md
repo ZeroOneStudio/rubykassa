@@ -38,6 +38,7 @@ Run `rails g rubykassa:install`, get an initializer with the following code:
       config.mode = :test # or :production
       config.http_method = :get # or :post
       config.xml_http_method = :get # or :post
+      config.hash_algorithm = :md5 # or :ripemd160, :sha1, :sha256, :sha384, :sha512
     end
 
 and configure it with your credentials. NB! Keep in mind that we are using environment variables. So do not forget to configure your `ENV`. For example using [figaro gem](https://github.com/laserlemon/figaro).
@@ -112,7 +113,7 @@ See the CI build [![Build Status](https://secure.travis-ci.org/ZeroOneStudio/rub
 ## License
 
 This project rocks and uses MIT-LICENSE
-Copyright (c) 2013-2014 [Zero One][]
+Copyright (c) 2013-2016 [Zero One][]
 
 [ZERO.ONE]: http://www.zeroone.st
 

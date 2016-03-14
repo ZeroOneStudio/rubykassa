@@ -7,7 +7,6 @@ Rubykassa.configure do |config|
   config.xml_http_method = :get # or :post
   config.hash_algorithm = :md5 # or :ripemd160, :sha1, :sha256, :sha384, :sha512
 
-
   # Result callback is called in RobokassaController#result action if valid signature
   # was generated. It should always return "OK#{ invoice_id }" string, so implement
   # your custom logic above `render text: notification.success` line
