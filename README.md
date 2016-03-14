@@ -45,7 +45,7 @@ and configure it with your credentials. NB! Keep in mind that we are using envir
 
 Also, you need to specify Result URL, Success URL and Fail URL at the "Technical Settings" (Технические настройки) in your Robokassa dashboard:
 
-* Result URL: `http://<your_domain>/robokassa/paid`
+* Result URL: `http://<your_domain>/robokassa/result`
 * Success URL: `http://<your_domain>/robokassa/success`
 * Fail URL: `http://<your_domain>/robokassa/fail`
 
@@ -60,7 +60,7 @@ To define custom success/fail callbacks you can also use the initializer:
 
 Lambdas are called in RobokassaController so you can respond with [any kind that is supported by Rails](http://guides.rubyonrails.org/layouts_and_rendering.html#creating-responses).
 
-NOTE: `result_callback` should always return `"OK#{ invoice_id }"` string. So, implement your custom logic above `render text: notification.success` line.
+NOTE: `result_callback` should always return `"OK#{invoice_id}"` string. So, implement your custom logic above `render text: notification.success` line.
 
 IMPORTANT: Don't forget to restart web server after every change
 
