@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'rubykassa/signature_generator'
 
 module Rubykassa
@@ -6,16 +5,18 @@ module Rubykassa
     include SignatureGenerator
 
     attr_accessor :params
+    attr_reader :invoice_id, :total
 
-    def initialize(params)
+    def initialize(params = {})
       @params = HashWithIndifferentAccess.new(params)
-      @invoice_id = @params["InvId"]
-      @total = @params["OutSum"]
+      @invoice_id = @params['InvId']
+      @total = @params['OutSum']
     end
 
     %w(result success).map do |kind|
       define_method "valid_#{kind}_signature?" do
-        @params["SignatureValue"].to_s.downcase == generate_signature_for(kind.to_sym)
+        @params['SignatureValue'].to_s.downcase ==
+            generate_signature_for(kind.to_sym)
       end
     end
 
