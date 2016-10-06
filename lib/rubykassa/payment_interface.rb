@@ -11,7 +11,8 @@ module Rubykassa
       invoice_id:  'InvId'.freeze,
       signature:   'SignatureValue'.freeze,
       email:       'Email'.freeze,
-      currency:    'IncCurrLabel'.freeze,
+      available_currencies:    'IncCurrLabel'.freeze,
+      currency:    'OutSumCurrency'.freeze,
       description: 'Desc'.freeze,
       culture:     'Culture'.freeze,
       is_test:     'IsTest'.freeze
@@ -29,8 +30,8 @@ module Rubykassa
     end
 
     def pay_url(extra_params = {})
-      extra_params = extra_params.slice :currency, :description, :email,
-                                        :culture
+      extra_params = extra_params.slice :currency, :available_currencies,
+                                        :description, :email, :culture
       result_params = initial_options.merge(extra_params).map do |key, value|
         if key =~ /^shp/
           "#{key}=#{value}"
