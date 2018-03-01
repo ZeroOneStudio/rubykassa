@@ -7,11 +7,12 @@
 [![Dependency Status](https://gemnasium.com/ZeroOneStudio/rubykassa.png)](https://gemnasium.com/ZeroOneStudio/rubykassa)
 [![Inline docs](http://inch-ci.org/github/ZeroOneStudio/rubykassa.svg?branch=master)](http://inch-ci.org/github/ZeroOneStudio/rubykassa)
 
-by [Zero One][]
+by [Ruby Fire][] and [Zero One][]
 
 [Zero One]: http://zeroone.st
+[Ruby Fire]: http://rubyfire.ru
 
-Yet another Ruby wrapper for [Robokassa API][]. Make Robokassa to work with your Rails project without pain. Rubykassa took the best from [robokassa gem][] and [Active Merchant Robokassa integration] but easier to use and setup.
+Yet another Ruby wrapper for [Robokassa API][]. Make Robokassa to work with your Rails project without pain. Rubykassa took the best from [robokassa gem][] and [Active Merchant Robokassa integration] but easier to use and setup. Supports Rails 5.
 
 [Robokassa API]: http://robokassa.ru/ru/Doc/Ru/Interface.aspx
 [robokassa gem]: https://github.com/shaggyone/robokassa
@@ -25,7 +26,7 @@ Yet another Ruby wrapper for [Robokassa API][]. Make Robokassa to work with your
 
 Add to your `Gemfile`:
 
-    gem "rubykassa"
+    gem "rubykassa", :git => "https://github.com/ElusiveSpirit/rubykassa.git"
 
 ## Usage
 
@@ -108,6 +109,14 @@ then call whatever you need
 
 In test mode, `op_state` accepts hash with additional attributes you would like to get back with response, for example `{ 'StateCode' => 5 }` (more about [StateCode](http://robokassa.ru/en/Doc/En/Interface.aspx#interfeys)). Please note, that any additional parameters to `op_state` are discarded in production mode.
 
+## How to pay fee for yout client
+
+Run `total = xml_interface.calc_out_summ` to get summ without RoboKassa fee and then use `total` in payment_url
+    
+    <%= pay_url ivoice_id, total do %>
+      Pay with Robokassa
+    <% end %>
+
 ## Supported Rubies and Rails versions
 
 See the CI build [![Build Status](https://secure.travis-ci.org/ZeroOneStudio/rubykassa.png)](http://travis-ci.org/ZeroOneStudio/rubykassa)
@@ -115,7 +124,7 @@ See the CI build [![Build Status](https://secure.travis-ci.org/ZeroOneStudio/rub
 ## License
 
 This project rocks and uses MIT-LICENSE
-Copyright (c) 2013-2016 [Zero One][]
+Copyright (c) 2013-2016 [Zero One][] 2018 [Ruby Fire][]
 
 [ZERO.ONE]: http://www.zeroone.st
 
