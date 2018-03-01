@@ -35,6 +35,7 @@ Run `rails g rubykassa:install`, get an initializer with the following code:
       config.login = ENV["ROBOKASSA_LOGIN"]
       config.first_password = ENV["ROBOKASSA_FIRST_PASSWORD"]
       config.second_password = ENV["ROBOKASSA_SECOND_PASSWORD"]
+      config.currency = ENV["ROBOKASSA_CURRENCY"]
       config.mode = :test # or :production
       config.http_method = :get # or :post
       config.xml_http_method = :get # or :post
@@ -103,6 +104,7 @@ then call whatever you need
     xml_interface.get_payment_methods
     xml_interface.get_rates
     xml_interface.op_state
+    xml_interface.calc_out_summ
 
 In test mode, `op_state` accepts hash with additional attributes you would like to get back with response, for example `{ 'StateCode' => 5 }` (more about [StateCode](http://robokassa.ru/en/Doc/En/Interface.aspx#interfeys)). Please note, that any additional parameters to `op_state` are discarded in production mode.
 

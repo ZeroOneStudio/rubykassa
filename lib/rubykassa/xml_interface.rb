@@ -16,6 +16,13 @@ module Rubykassa
       yield self if block_given?
     end
 
+    def calc_out_summ
+      request transform_method_name(__method__),
+              'MerchantLogin' => Rubykassa.login,
+              'IncCurrLabel' => Rubykassa.currency,
+              'IncSum' => @total.to_s
+    end
+
     def get_currencies
       request transform_method_name(__method__),
               'MerchantLogin' => Rubykassa.login,

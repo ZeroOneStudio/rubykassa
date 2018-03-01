@@ -1,7 +1,7 @@
 module Rubykassa
   class Configuration
     ATTRIBUTES = [
-      :login, :first_password, :second_password, :mode, :http_method,
+      :login, :first_password, :second_password, :currency, :mode, :http_method,
       :xml_http_method, :success_callback, :fail_callback, :result_callback,
       :hash_algorithm
     ]
@@ -13,6 +13,7 @@ module Rubykassa
       self.login = 'your_login'
       self.first_password   = 'first_password'
       self.second_password  = 'second_password'
+      self.currency  = 'currency'
       self.mode             = :test
       self.http_method      = :get
       self.xml_http_method  = :get
