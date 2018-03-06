@@ -2,6 +2,7 @@ Rubykassa.configure do |config|
   config.login = ENV['ROBOKASSA_LOGIN']
   config.first_password = ENV['ROBOKASSA_FIRST_PASSWORD']
   config.second_password = ENV['ROBOKASSA_SECOND_PASSWORD']
+  config.currency = ENV['ROBOKASSA_CURRENCY']
   config.mode = :test # or :production
   config.http_method = :get # or :post
   config.xml_http_method = :get # or :post
